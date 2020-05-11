@@ -1,2 +1,1 @@
-# mywebsite
-My personal website
+My personal website designed with React
