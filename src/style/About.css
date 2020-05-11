@@ -1,0 +1,38 @@
+.title-img {
+	background-image: url("/personal_pic.jpg");
+	max-width: 2000px;
+    height: 825px;
+    background-size: 100%;
+    color: black;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.myName-title {
+	font-size: 50px;
+	margin-left: 50%;
+	font-family: "Courier", monospace;
+}
+
+.about-me-section {
+	background-color: white;
+}
+
+.about-me-title {
+	padding-top: 30px;
+	font-size: 50px;
+	text-align: center;
+}
+
+.about-me-text {
+	margin-left: 200px;
+	margin-right: 200px;
+	padding-top: 10px;
+	padding-bottom: 60px;
+	font-size: 20px;
+	text-align: center;
+}

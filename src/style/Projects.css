@@ -1,0 +1,42 @@
+.Projects {
+	background-color: white;
+}
+.title {
+	color: grey;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 80px;
+	margin-left: 45%;
+	padding-bottom: 30px;
+}
+
+.section {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	border: 2px solid white;
+  	border-radius: 5px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.projTitle {
+	color: grey;
+	font-size: 25px;
+	margin-left: 2.5%;
+	text-align: center;
+}
+
+.descrip {
+	font-size: 18px;
+}
+
+.descripList {
+	display: block;
+	margin-left: 0.5%;
+
+}
+
+.img-setup {
+	padding-left: 20px;
+}
