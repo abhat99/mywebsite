@@ -20,11 +20,13 @@
 
 .about-me-section {
 	background-color: white;
+	padding-bottom: 60px;
+
 }
 
 .about-me-title {
 	padding-top: 30px;
-	font-size: 50px;
+	font-size: 40px;
 	text-align: center;
 }
 
@@ -32,7 +34,24 @@
 	margin-left: 200px;
 	margin-right: 200px;
 	padding-top: 10px;
-	padding-bottom: 60px;
 	font-size: 20px;
 	text-align: center;
 }
+
+.contact-section {
+	background-color: grey;
+	padding-top: 50px;
+	padding-bottom: 60px;
+	text-align: center;
+}
+
+.contact-title {
+	color: #D8CFCD;
+	font-size: 40px;
+}
+
+.contact-text {
+	color: #D8CFCD;
+	font-size: 20px;
+}
+

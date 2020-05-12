@@ -38,5 +38,14 @@
 }
 
 .img-setup {
-	padding-left: 20px;
+	padding-left: 15px;
+}
+
+.disclaimer {
+	color: grey;
+	font-style: italic;
+	text-align: center;
+	padding-bottom: 50px;
+	padding-top: 15px;
+	font-size: 20px;
 }

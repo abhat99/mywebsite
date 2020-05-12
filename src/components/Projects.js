@@ -5,14 +5,20 @@ import PageNavbar from './PageNavbar';
 
 
 export default class Home extends React.Component {
+
   constructor(props) {
     super(props);
 
+    this.state = {
+      descriptions: [[], [], [], [], [], [], []],
+      titles: [],
+      github: "https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg",
+      youtube: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ0AAAC7CAMAAABIKDvmAAAAkFBMVEX/AAD/////OTn/5OT/9vb/ysr/dnb/19f/0tL/ior/nJz/kpL/39//tbX/TEz/Vlb/wcH/paX/oKD/8PD/6en/u7v/fHz/YGD/jo7/qqr/2dn/xsb/SEj/NDT/hYX/9PT/HBz/sLD/Kir/bGz/gID/EBD/XV3/QkL/Ly//UVH/cnL/IyP/ZWX/Pz//FRX/ICClOSYmAAAG6klEQVR4nO2da3eqOhBAMwqCgg8evq2i0ndP7///dzcItqiA0OrM0LC/nrVOJrtIhmSSCEBGi/H8diab5N817LgOiJv9T55vG6apj8b9uWt112E46eynw8Hzwy54FL8i2O0eVsPh034SrtfrmeXO+yPdNBe2791Y2k9teLLr46jb4X6w+2Vvf8vjrvU6fQu7PaevS0cekg3fWDqzyVOLuPclCFZva2urG+1qD08pG565tSbP1D38IZ+rTndr2DexsdGtJ+r+3Ib3D0u/9iMqtOG7dX0g8ghC/Yc2+n9NRcJkUd2GQx30HVnlPSA5Nvr8h41f8WyUt7H4Rx3t/ZmUtTGjjhSFwCxjw29Rx4mFe93GkjpGRPbXbMypI0RlWmyjRx0fMk9FNizq6ND5yLfhUsdGwCzPxpg6MhJG2TZs6riI8DJtvFOHRcQ0y0aHOioyRpc2TOqY6Hi/tPFAHRMhzrkNNceThM9zGy/UEZEyPrWhU8dDy+DUxpQ6HmL8ExvU0VDjpG0o/kMRYpW2ocbcXxFayobKyUaM/m1Do46FHuvbhsJZ+ZHVtw3V5v+y+Laxpw6FAfaXjU/qUBgwOtpoXqIieY1GNhbUkXBgerSh9Nf8F0cb6q2iZKElNpohJWKR2NhRB8KCUWKDOg4e9GIbHnUcPAhjGwZ1HDwYxDZUql8pIrbxl2shqxDb6FKHwQT/YEPdBdhTjIONFXUYTFgebPzxsuHSOAcbeO29vOK1VZ1ZZANxdqMFW7zGKhNGNtp47bUAtDe85ioyjGwgpqKtwwQ914/EXWQDcfmgFa/vcZ2ij2wgznwlNsDjuVUusoGYmB9tAIw4DuuetIE4D/htA2CN12xZbGkDMay0DbDZbSI0pY0JXnMnNoBd8qFLGx94zZ3ZgA2v5KMvbSB+tJ3bkMkHp1pER9pATIYubbBKPixpA7G5LBvgs0k+1gxsyOQjQIyhgAkLG1wmIz+Y2AB7gBhGHisQmMUb+TZYJB87ED5ic0U2YEM/Ww0CcbKn2IZMPqjLVkFg7u27YoN8CyoIzDKnqzbAJ90MAQKzcva6DYBlgBjQGRo7G5RbAHyGNuiSj7bArFcoaQOgjxhUCltglkeWtgEaSfJhCMw/Q3kbNMmHKTAz4io2KJIPU2AeTVPNBnjYyYcuMOucKtqQyQfu7oiRwHweK9tATj7G3G1AGzH52ArMWdqf2MBMPuY1sAEa1gKYIzC3Y/zQBoCBk3y49bCBVOLbq4sN2CCskNbHBoB+9+TDqpGN+ycf9bIB7fsuoVt1GGHT3LXGocs+Fz3Bv29i2q3Vs3HvX3WdbNx/TKmPDYx8Y1YXGyi56Kweb1Gk7xSrDjbQvmHrYANvfqPHe14UcOe+XM5z5hGo86IObxvIc+ZbxqtL+OspfbYrjxRrbSOmq9I067BL6QMP7mv0psA8WpR7/YbZ1PakMBjaoKv7stnZoKwJbDf1oin8ppY4hdbUmado9iCkAbFBbI35/hTR7F1K8cjEBo99bS8sbHDZ8/jKwAaf/bB7aSPAa475XulQ2kC8GZf5PvqutDHEa475GQs9aQMx6WF+/sZc2gjxmmN+NstI2kAc65mf2xOdVIP4Umd+ptNC2kD89R5t+Ihv7gr40gbiNHENzoLDPhnPZHvzamQDcfIrOkOS7zUDQWQD8XD3FusL3gfN2bMpOsg2eNM92OD04USJe7Ch+v2fR+ITvBE/VFgTn+7eXDQUE5/8T1QewA442GhueTzwGNvAXIllzBCae5e+WTc2UriJDdb5Mhp6YoPhpBwBdmKjuXgpAhIbyt+/HrE72sAs72FL52ijGVREPKTENpp7qKLFlKMNHsUktHhfNprLg8UnfNloXqPxSxSSW+mVZ5uy0Ux/2SkbTf4FKRvK/1QmJzboq5pp0U9sKH6bcgAnNjArAxnintlQ+z0KZzaUngCbX9hQOB99gAsbCi+5mRk2oEUdFRFryLKh6G8lXcSasgGYlwDwwc+xwa7wGwMD8mxQ70clYAn5NpRbWhlBkQ3FijlMKLahUjVH0D7v/IUN8FRZT3jSLvp+aUOVrNTJ6HmWDdTz14gY+lkdz7QBMGa7UeAm7EbZ3c6xIQeXv1ti/DDO63SuDQCdzSbmmzI9H1bL2ZDDi8tuX+IvWTleUYcLbUg2S+uvzIpNLX1zpbfXbBxo6053+h91b37MamL1jcJnopKNBG+hb3vdyZD6eJ1SPLaewpmjG5kj6S1spND8hbmUasLJx2uLxWj8+DLYh13LnY9Nwy71INzOxiUb316Y5rK/ddyeNeuuw850KBk8P+yCm/Q22LWeB8PpvhPKTvfc+Xasm6axsG3/2tugPDezUQnN89t5+J4WQxDX/6+3UVUbGgLqAAAAAElFTkSuQmCC",
+      box: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Box%2C_Inc._logo.svg/150px-Box%2C_Inc._logo.svg.png"
+    }
     // The state maintained by this React Component. This component maintains the list of genres,
     // and a list of movies for a specified genre.
-    this.state = {
-      projects: []
-    }
+
   }
 
   // React function that is called when the page load.
@@ -31,49 +37,118 @@ export default class Home extends React.Component {
     var wiki2 = 'Ran search algorithms such as DFS, BFS and Dijkstra`s to build a simple search engine on the page and pull insights from the graph';
     var pong1 = 'A version of the classic Pong game with 1-player, 2-player, power-ups and score tracking';
     var pong2 = 'Developed in Java';
-    var titles = ['ConcertDB', 'BasicOS', 'Mini-Minecraft', 'Music Streaming Protocol', 'J-Compiler', 'Wiki-Parse/Search', 'Pong'];
-    var descriptions = [[concertDB1, concertDB2], [basicOS1, basicOS2], [mm1, mm2], [nsa1, nsa2], [jc1, jc2], [wiki1, wiki2], [pong1, pong2]];
-    var total = [];
-    for (var i = 0; i < titles.length; i++) {
-      var obj = {title: titles[i], des: descriptions[i]};
-      total.push(obj);
-    }
-    let divs = total.map((projObj, i) =>
-      <div>
-        <div class="section">
-          <div class="row">
-            <div class="projTitle"> {projObj.title} </div>
-            <div className="img-setup" >
-              <a href="https://www.youtube.com/watch?v=ch1txjQJHlw" target="_blank">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ0AAAC7CAMAAABIKDvmAAAAkFBMVEX/AAD/////OTn/5OT/9vb/ysr/dnb/19f/0tL/ior/nJz/kpL/39//tbX/TEz/Vlb/wcH/paX/oKD/8PD/6en/u7v/fHz/YGD/jo7/qqr/2dn/xsb/SEj/NDT/hYX/9PT/HBz/sLD/Kir/bGz/gID/EBD/XV3/QkL/Ly//UVH/cnL/IyP/ZWX/Pz//FRX/ICClOSYmAAAG6klEQVR4nO2da3eqOhBAMwqCgg8evq2i0ndP7///dzcItqiA0OrM0LC/nrVOJrtIhmSSCEBGi/H8diab5N817LgOiJv9T55vG6apj8b9uWt112E46eynw8Hzwy54FL8i2O0eVsPh034SrtfrmeXO+yPdNBe2791Y2k9teLLr46jb4X6w+2Vvf8vjrvU6fQu7PaevS0cekg3fWDqzyVOLuPclCFZva2urG+1qD08pG565tSbP1D38IZ+rTndr2DexsdGtJ+r+3Ib3D0u/9iMqtOG7dX0g8ghC/Yc2+n9NRcJkUd2GQx30HVnlPSA5Nvr8h41f8WyUt7H4Rx3t/ZmUtTGjjhSFwCxjw29Rx4mFe93GkjpGRPbXbMypI0RlWmyjRx0fMk9FNizq6ND5yLfhUsdGwCzPxpg6MhJG2TZs6riI8DJtvFOHRcQ0y0aHOioyRpc2TOqY6Hi/tPFAHRMhzrkNNceThM9zGy/UEZEyPrWhU8dDy+DUxpQ6HmL8ExvU0VDjpG0o/kMRYpW2ocbcXxFayobKyUaM/m1Do46FHuvbhsJZ+ZHVtw3V5v+y+Laxpw6FAfaXjU/qUBgwOtpoXqIieY1GNhbUkXBgerSh9Nf8F0cb6q2iZKElNpohJWKR2NhRB8KCUWKDOg4e9GIbHnUcPAhjGwZ1HDwYxDZUql8pIrbxl2shqxDb6FKHwQT/YEPdBdhTjIONFXUYTFgebPzxsuHSOAcbeO29vOK1VZ1ZZANxdqMFW7zGKhNGNtp47bUAtDe85ioyjGwgpqKtwwQ914/EXWQDcfmgFa/vcZ2ij2wgznwlNsDjuVUusoGYmB9tAIw4DuuetIE4D/htA2CN12xZbGkDMay0DbDZbSI0pY0JXnMnNoBd8qFLGx94zZ3ZgA2v5KMvbSB+tJ3bkMkHp1pER9pATIYubbBKPixpA7G5LBvgs0k+1gxsyOQjQIyhgAkLG1wmIz+Y2AB7gBhGHisQmMUb+TZYJB87ED5ic0U2YEM/Ww0CcbKn2IZMPqjLVkFg7u27YoN8CyoIzDKnqzbAJ90MAQKzcva6DYBlgBjQGRo7G5RbAHyGNuiSj7bArFcoaQOgjxhUCltglkeWtgEaSfJhCMw/Q3kbNMmHKTAz4io2KJIPU2AeTVPNBnjYyYcuMOucKtqQyQfu7oiRwHweK9tATj7G3G1AGzH52ArMWdqf2MBMPuY1sAEa1gKYIzC3Y/zQBoCBk3y49bCBVOLbq4sN2CCskNbHBoB+9+TDqpGN+ycf9bIB7fsuoVt1GGHT3LXGocs+Fz3Bv29i2q3Vs3HvX3WdbNx/TKmPDYx8Y1YXGyi56Kweb1Gk7xSrDjbQvmHrYANvfqPHe14UcOe+XM5z5hGo86IObxvIc+ZbxqtL+OspfbYrjxRrbSOmq9I067BL6QMP7mv0psA8WpR7/YbZ1PakMBjaoKv7stnZoKwJbDf1oin8ppY4hdbUmado9iCkAbFBbI35/hTR7F1K8cjEBo99bS8sbHDZ8/jKwAaf/bB7aSPAa475XulQ2kC8GZf5PvqutDHEa475GQs9aQMx6WF+/sZc2gjxmmN+NstI2kAc65mf2xOdVIP4Umd+ptNC2kD89R5t+Ihv7gr40gbiNHENzoLDPhnPZHvzamQDcfIrOkOS7zUDQWQD8XD3FusL3gfN2bMpOsg2eNM92OD04USJe7Ch+v2fR+ITvBE/VFgTn+7eXDQUE5/8T1QewA442GhueTzwGNvAXIllzBCae5e+WTc2UriJDdb5Mhp6YoPhpBwBdmKjuXgpAhIbyt+/HrE72sAs72FL52ijGVREPKTENpp7qKLFlKMNHsUktHhfNprLg8UnfNloXqPxSxSSW+mVZ5uy0Ux/2SkbTf4FKRvK/1QmJzboq5pp0U9sKH6bcgAnNjArAxnintlQ+z0KZzaUngCbX9hQOB99gAsbCi+5mRk2oEUdFRFryLKh6G8lXcSasgGYlwDwwc+xwa7wGwMD8mxQ70clYAn5NpRbWhlBkQ3FijlMKLahUjVH0D7v/IUN8FRZT3jSLvp+aUOVrNTJ6HmWDdTz14gY+lkdz7QBMGa7UeAm7EbZ3c6xIQeXv1ti/DDO63SuDQCdzSbmmzI9H1bL2ZDDi8tuX+IvWTleUYcLbUg2S+uvzIpNLX1zpbfXbBxo6053+h91b37MamL1jcJnopKNBG+hb3vdyZD6eJ1SPLaewpmjG5kj6S1spND8hbmUasLJx2uLxWj8+DLYh13LnY9Nwy71INzOxiUb316Y5rK/ddyeNeuuw850KBk8P+yCm/Q22LWeB8PpvhPKTvfc+Xasm6axsG3/2tugPDezUQnN89t5+J4WQxDX/6+3UVUbGgLqAAAAAElFTkSuQmCC" height="20" width="25"/>
-              </a>
-            </div>
-          </div>
-          <ul class="row descripList">
-            <li class="descrip"> {projObj.des[0]} </li>
-            <li class="descrip"> {projObj.des[1]} </li>
-          </ul>
-        </div>
-        <br></br>
-      </div>
-
-    );
-    console.log(divs);
+    let t = ['ConcertDB', 'BasicOS', 'Mini-Minecraft', 'Music Streaming Protocol', 'J-Compiler', 'Wiki-Parse/Search', 'Pong'];
+    let d = [[concertDB1, concertDB2], [basicOS1, basicOS2], [mm1, mm2], [nsa1, nsa2], [jc1, jc2], [wiki1, wiki2], [pong1, pong2]];
     this.setState({
-      projects: divs
+      titles: t,
+      descriptions: d
     });
-
   }
   
   
-  render() {    
+  render() { 
     return (
       <div className="Projects">
         <PageNavbar active="projects" />
         <div class="row">
             <div className="title"> PROJECTS: </div>
         </div>
-        {this.state.projects}
+        
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[0]} </div>
+              <div className="img-setup" >
+                <a href="https://www.youtube.com/watch?v=ch1txjQJHlw" target="_blank">
+                  <img src={this.state.youtube} height="20" width="25"/>                
+                </a>
+              </div>
+          </div>
+          <ul class="row descripList">
+            <li class="descrip"> {this.state.descriptions[0][0]} </li>
+            <li class="descrip"> {this.state.descriptions[0][1]} </li>
+          </ul>
+        </div>
+        <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[1]} </div>
+              <div className="img-setup" >
+              </div>
+          </div>
+          <ul class="row descripList">
+            <li class="descrip"> {this.state.descriptions[1][0]} </li>
+            <li class="descrip"> {this.state.descriptions[1][1]} </li>
+          </ul>
+        </div>
+        <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[2]} </div>
+              <div className="img-setup" >
+                <a href="https://upenn.box.com/s/uamkx6aj0gqdrsqepk9sle7eziyhlg53" target="_blank">
+                  <img src={this.state.box} height="15" width="30"/>
+                </a>
+              </div>
+            </div>
+            <ul class="row descripList">
+              <li class="descrip"> {this.state.descriptions[2][0]} </li>
+              <li class="descrip"> {this.state.descriptions[2][1]} </li>
+            </ul>
+          </div>
+          <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[3]} </div>
+              <div className="img-setup" >
+              </div>
+          </div>
+          <ul class="row descripList">
+            <li class="descrip"> {this.state.descriptions[3][0]} </li>
+            <li class="descrip"> {this.state.descriptions[3][1]} </li>
+          </ul>
+        </div>
+          <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[4]} </div>
+              <div className="img-setup" >
+              </div>
+            </div>
+            <ul class="row descripList">
+              <li class="descrip"> {this.state.descriptions[4][0]} </li>
+              <li class="descrip"> {this.state.descriptions[4][1]} </li>
+            </ul>
+          </div>
+          <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[5]} </div>
+              <div className="img-setup" >
+              </div>
+            </div>
+            <ul class="row descripList">
+              <li class="descrip"> {this.state.descriptions[5][0]} </li>
+              <li class="descrip"> {this.state.descriptions[5][1]} </li>
+            </ul>
+          </div>
+          <br></br>
+        <div class="section">
+          <div class="row">
+            <div class="projTitle"> {this.state.titles[6]} </div>
+              <div className="img-setup" >
+              <a href="https://github.com/abhat99/cis120-finalproj" target="_blank">
+                <img src={this.state.github} height="25" width="25"/>
+              </a>
+              </div>
+            </div>
+            <ul class="row descripList">
+              <li class="descrip"> {this.state.descriptions[6][0]} </li>
+              <li class="descrip"> {this.state.descriptions[6][1]} </li>
+            </ul>
+          </div>
+          <br></br>
+        <div className="disclaimer"> All project code available on request </div>
+
       </div>
     );
   }
