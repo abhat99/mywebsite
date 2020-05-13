@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/PageNavbar.css'
+import Resume from '../Bhat_Resume.pdf';
+
 
 export default class PageNavbar extends React.Component {
 	constructor(props) {
@@ -21,7 +23,7 @@ export default class PageNavbar extends React.Component {
 			}
 			else {
 				if (page == 'resume') {
-					return <a className="nav-item nav-link mx-2" href="https://drive.google.com/file/d/1Hhg06q0HSDu1Frzr_fVZih1sbwYeENou/view?usp=sharing" target="_blank">{page.toUpperCase()}</a>
+					return <a className="nav-item nav-link mx-2" href={Resume} target="_blank">{page.toUpperCase()}</a>
 				}
 				return <a className="nav-item nav-link mx-2" key={i} href={"/" + page}>{page.toUpperCase()}</a>
 			}

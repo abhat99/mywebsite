@@ -29,7 +29,7 @@ export default class Home extends React.Component {
         <div className="about-me-section">
           <div className="about-me-title"> About Me </div>
           <div className="about-me-text"> Hi, I'm Ashish Bhat. </div>
-          <div className="about-me-text"> I'm currently a rising senior at the University of Pennsylvania studying Computer Science with interests in robotics and data science. My experiences, resume and contact information are all available on the site. </div> 
+          <div className="about-me-text"> I'm currently a rising senior at the University of Pennsylvania studying Computer Science with interests in robotics and data science. My projects, resume and email are all available on the site. </div> 
         </div>
         <div className="resume-section">
           
