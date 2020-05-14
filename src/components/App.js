@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import About from './About';
+import Experience from './Experience';
 import Projects from './Projects';
 
 export default class App extends React.Component {
@@ -32,6 +33,12 @@ export default class App extends React.Component {
 							path="/projects"
 							render={() => (
 								<Projects />
+							)}
+						/>
+						<Route
+							path="/experience"
+							render={() => (
+								<Experience />
 							)}
 						/>
 					</Switch>

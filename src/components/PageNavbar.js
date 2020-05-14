@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/PageNavbar.css'
-import Resume from '../Bhat_Resume.pdf';
+import Resume from '../files/Bhat_Resume.pdf';
 
 
 export default class PageNavbar extends React.Component {
@@ -15,7 +15,7 @@ export default class PageNavbar extends React.Component {
 
 	componentDidMount() {
 		//change the navbar page names
-		const pageList = ['about', 'projects', 'resume'];
+		const pageList = ['about', 'projects', 'experience', 'resume'];
 
 		let navbarDivs = pageList.map((page, i) => {
 			if (this.props.active === page) {
