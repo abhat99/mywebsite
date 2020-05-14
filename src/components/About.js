@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PageNavbar from './PageNavbar';
 
 
-export default class Home extends React.Component {
+export default class About extends React.Component {
   constructor(props) {
     super(props);
 
@@ -21,8 +21,8 @@ export default class Home extends React.Component {
   
   render() {    
     return (
-      <div className="Home">
-        <PageNavbar active="home" />
+      <div className="About">
+        <PageNavbar active="about" />
         <div className="title-img">
             <div className="myName-title"> ASHISH BHAT </div>
         </div>

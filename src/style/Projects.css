@@ -22,13 +22,15 @@
 
 .projTitle {
 	color: grey;
-	font-size: 25px;
+	font-size: 27.5px;
 	margin-left: 2.5%;
 	text-align: center;
 }
 
 .descrip {
-	font-size: 18px;
+	font-size: 20px;
+	margin-right: 2.5%;
+	color: black;
 }
 
 .descripList {

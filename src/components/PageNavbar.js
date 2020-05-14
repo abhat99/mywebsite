@@ -19,15 +19,15 @@ export default class PageNavbar extends React.Component {
 
 		let navbarDivs = pageList.map((page, i) => {
 			if (this.props.active === page) {
-				return <a className="nav-item nav-link active mx-2" key={i} href={"/" + page}>{page.toUpperCase()}</a>
+				return <a className="nav-item nav-link active mx-2" key={i} href={"/" + page}>{page.toUpperCase()}</a>;
 			}
 			else {
 				if (page == 'resume') {
-					return <a className="nav-item nav-link mx-2" href={Resume} target="_blank">{page.toUpperCase()}</a>
+					return <a className="nav-item nav-link mx-2" href={Resume} target="_blank">{page.toUpperCase()}</a>;
 				}
-				return <a className="nav-item nav-link mx-2" key={i} href={"/" + page}>{page.toUpperCase()}</a>
+				return <a className="nav-item nav-link mx-2" key={i} href={"/" + page}>{page.toUpperCase()}</a>;
 			}
-		})
+		});
 
 		this.setState({
 			navDivs: navbarDivs
@@ -40,9 +40,9 @@ export default class PageNavbar extends React.Component {
 				<nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark navbar-custom-bgcolor">
 			      <span className="navbar-brand"> Ashish Bhat</span>
 			      <div className="navbar-collapse collapse">
-			        <ul className="nav navbar-nav navbar-center">
+			        <div className="nav navbar-nav navbar-center">
 			        	{this.state.navDivs}
-			        </ul>
+			        </div>
 			      </div>
 			    </nav>
 			</div>
