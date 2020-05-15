@@ -2,6 +2,8 @@ import React from 'react';
 import '../style/About.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageNavbar from './PageNavbar';
+import linkedin from '../files/linkedin.png'
+import gmail from '../files/gmail.png'
 
 
 export default class About extends React.Component {
@@ -36,7 +38,8 @@ export default class About extends React.Component {
         </div>
         <div className="contact-section">
           <div className="contact-title"> Contact: </div>
-          <div> <a className="contact-text" target="_blank" href = "mailto: abhat99@seas.upenn.edu">Send Email</a> </div>
+          <span> <a target="_blank" href = "mailto: abhat99@seas.upenn.edu"><img className="gmail-img" src={gmail} height="65"/></a> </span>
+          <span> <a target="_blank" href = "https://www.linkedin.com/in/ashish-bhat-951537157/"> <img className="linkedin-img" src={linkedin} height="70"/> </a> </span>
         </div>
       </div>
     );

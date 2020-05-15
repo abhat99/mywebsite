@@ -50,8 +50,14 @@
 	font-size: 40px;
 }
 
-.contact-text {
-	color: #D8CFCD;
-	font-size: 20px;
+.linkedin-img {
+	border-radius: 15px;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+.gmail-img {
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-right: 15px;
 }
 
