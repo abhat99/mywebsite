@@ -39,8 +39,9 @@ export default class Experience extends React.Component {
     var company2 = {name: 'ActionIQ', dates:'Cancelled', img: aiq, url: 'https://www.actioniq.com/', role: 'Software Engineer Intern', bul1: company2_bul1};
     
     //Bashpole
-    var company3_bul1 = 'Will be working on the development and production of a large codebase designed to help the FBI and law enforcement combat human trafficking';
-    var company3 = {name: 'Bashpole Software', dates:'May 2020 - Aug 2020', img: bp, url: 'https://www.actioniq.com/', role: 'Software Engineer Intern', bul1: company3_bul1};
+    var company3_bul1 = 'Rebuilding a detection codebase including a website, tipline and backend API implementing facial recognition technology, with the ability to compare and identify faces, intended to support anti-trafficking operations';
+    var company3_bul2 = 'Utilizing Javascript (Angular/Node.js), Twilio, AWS, MongoDB, Java and Python for front-end and back-end development, data storage and deployment'
+    var company3 = {name: 'Bashpole Software', dates:'May 2020 - Aug 2020', img: bp, url: 'https://bashpolesoftware.com/', role: 'Software Engineer Intern', bul1: company3_bul1, bul2: company3_bul2};
     
 
 
@@ -65,11 +66,11 @@ export default class Experience extends React.Component {
         <div class="section">
           <div class="row">
             <div class="col-2">
-              <img className="companyImg" src={this.state.companies[0].img} height="200px"/>
+              <a href={this.state.companies[0].url} target="_blank"> <img className="companyImg" src={this.state.companies[0].img} height="200px"/> </a>
             </div>
             <div class="col">
               <div class="row">
-                 <a className="companyName" href="https://www.baesystems.com/en-us/our-company" target="_blank"> {this.state.companies[0].name} </a> 
+                 <a className="companyName" href={this.state.companies[0].url} target="_blank"> {this.state.companies[0].name} </a> 
               </div>
               <div class ="row">
                 <div class="col">
@@ -81,6 +82,7 @@ export default class Experience extends React.Component {
               </div>
               <ul class="row descripList-exp">
                 <li class="descrip-exp"> {this.state.companies[0].bul1} </li>
+                <li class="descrip-exp"> {this.state.companies[0].bul2} </li>
               </ul>
             </div>  
           </div>  
@@ -89,11 +91,11 @@ export default class Experience extends React.Component {
         <div class="section">
           <div class="row">
             <div class="col-2">
-              <img className="companyImg" src={this.state.companies[1].img} height="200px"/>
+              <a href={this.state.companies[1].url} target="_blank"> <img className="companyImg" src={this.state.companies[1].img} height="200px"/> </a>
             </div>
             <div class="col">
               <div class="row">
-                 <a className="companyName" href="https://www.baesystems.com/en-us/our-company" target="_blank"> {this.state.companies[1].name} </a> 
+                 <a className="companyName" href={this.state.companies[1].url} target="_blank"> {this.state.companies[1].name} </a> 
               </div>
               <div class ="row">
                 <div class="col">
@@ -113,11 +115,11 @@ export default class Experience extends React.Component {
         <div class="section">
           <div class="row">
             <div class="col-2">
-              <img class="companyImg" src={this.state.companies[2].img} height="200px"/>
+              <a href={this.state.companies[2].url} target="_blank"> <img class="companyImg" src={this.state.companies[2].img} height="200px"/> </a>
             </div>
             <div class="col">
               <div class="row">
-                 <a className="companyName" href="https://www.baesystems.com/en-us/our-company" target="_blank"> {this.state.companies[2].name} </a> 
+                 <a className="companyName" href={this.state.companies[2].url} target="_blank"> {this.state.companies[2].name} </a> 
               </div>
               <div class ="row">
                 <div class="col">
@@ -139,11 +141,11 @@ export default class Experience extends React.Component {
         <div class="section">
           <div class="row">
             <div class="col-2">
-              <img className="companyImg" src={this.state.companies[3].img} height="200px"/>
+              <a href={this.state.companies[3].url} target="_blank"> <img className="companyImg" src={this.state.companies[3].img} height="200px"/> </a>
             </div>
             <div class="col">
               <div class="row">
-                 <a className="companyName" href="https://www.baesystems.com/en-us/our-company" target="_blank"> {this.state.companies[3].name} </a> 
+                 <a className="companyName" href={this.state.companies[3].url} target="_blank"> {this.state.companies[3].name} </a> 
               </div>
               <div class ="row">
                 <div class="col">

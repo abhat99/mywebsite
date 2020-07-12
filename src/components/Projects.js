@@ -40,8 +40,9 @@ export default class Home extends React.Component {
     var wiki2 = 'Ran search algorithms such as DFS, BFS and Dijkstra`s to build a simple search engine on the page and pull insights from the graph';
     var pong1 = 'A version of the classic Pong game with 1-player, 2-player, power-ups and score tracking';
     var pong2 = 'Developed in Java';
-    let t = ['ConcertDB', 'BasicOS', 'Mini-Minecraft', 'Music Streaming Protocol', 'J-Compiler', 'Wiki-Parse/Search', 'Pong'];
-    let d = [[concertDB1, concertDB2], [basicOS1, basicOS2], [mm1, mm2], [nsa1, nsa2], [jc1, jc2], [wiki1, wiki2], [pong1, pong2]];
+    var website1 = 'Personal website developed with React, and deployed and hosted with Firebase'
+    let t = ['ConcertDB', 'BasicOS', 'Mini-Minecraft', 'Music Streaming Protocol', 'J-Compiler', 'Wiki-Parse/Search', 'Pong', 'This Website'];
+    let d = [[concertDB1, concertDB2], [basicOS1, basicOS2], [mm1, mm2], [nsa1, nsa2], [jc1, jc2], [wiki1, wiki2], [pong1, pong2], [website1]];
     this.setState({
       titles: t,
       descriptions: d
@@ -147,6 +148,20 @@ export default class Home extends React.Component {
             <ul class="row descripList">
               <li class="descrip"> {this.state.descriptions[6][0]} </li>
               <li class="descrip"> {this.state.descriptions[6][1]} </li>
+            </ul>
+          </div>
+          <br></br>
+          <div class="section">
+            <div class="row">
+              <div class="projTitle"> {this.state.titles[7]} </div>
+                <div className="img-setup" >
+                <a href="https://github.com/abhat99/mywebsite" target="_blank">
+                  <img src={this.state.github} height="25" width="25"/>
+                </a>
+                </div>
+            </div>
+            <ul class="row descripList">
+              <li class="descrip"> {this.state.descriptions[7]} </li>
             </ul>
           </div>
           <br></br>
