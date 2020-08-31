@@ -39,9 +39,10 @@ export default class Experience extends React.Component {
     var company2 = {name: 'ActionIQ', dates:'Cancelled', img: aiq, url: 'https://www.actioniq.com/', role: 'Software Engineer Intern', bul1: company2_bul1};
     
     //Bashpole
-    var company3_bul1 = 'Rebuilding a detection codebase including a website, tipline and backend API implementing facial recognition technology, with the ability to compare and identify faces, intended to support anti-trafficking operations';
-    var company3_bul2 = 'Utilizing Javascript (Angular/Node.js), Twilio, AWS, MongoDB, Java and Python for front-end and back-end development, data storage and deployment'
-    var company3 = {name: 'Bashpole Software', dates:'May 2020 - Aug 2020', img: bp, url: 'https://bashpolesoftware.com/', role: 'Software Engineer Intern', bul1: company3_bul1, bul2: company3_bul2};
+    var company3_bul1 = 'Led a rebuild of a detection codebase including a website, tipline and API implementing facial recognition technology, with the ability to compare and identify faces, intended to support anti-trafficking operations';
+    var company3_bul2 = 'Utilized Javascript with Angular and Node for the website, and Java and Python for the API'
+    var company3_bul3 = 'Data stored in MongoDB and AWS S3, phone line created with Twilio, while facial recognition is built with AWS Rekognition and OpenFace'
+    var company3 = {name: 'Bashpole Software', dates:'May 2020 - Aug 2020', img: bp, url: 'https://bashpolesoftware.com/', role: 'Software Engineer Intern', bul1: company3_bul1, bul2: company3_bul2, bul3: company3_bul3};
     
 
 
@@ -83,6 +84,7 @@ export default class Experience extends React.Component {
               <ul class="row descripList-exp">
                 <li class="descrip-exp"> {this.state.companies[0].bul1} </li>
                 <li class="descrip-exp"> {this.state.companies[0].bul2} </li>
+                <li class="descrip-exp"> {this.state.companies[0].bul3} </li>
               </ul>
             </div>  
           </div>  

@@ -5,7 +5,7 @@ Using Firebase to host the website.
 Start application -
 For development: npm start
 For deployment: 
-	npm build 
+	npm run build 
 	(set up firebase locally)
 	firebase deploy
 
