@@ -31,7 +31,7 @@ export default class About extends React.Component {
         <div className="about-me-section">
           <div className="about-me-title"> About Me </div>
           <div className="about-me-text"> Hi, I'm Ashish Bhat. </div>
-          <div className="about-me-text"> I'm currently a rising senior at the University of Pennsylvania studying Computer Science with interests in robotics, machine learning and big data. I'm currently looking for full time Software or Data Engineering roles after graduating in May 2021. My projects, experience and resume are all available on the site. Feel free to contact me using the Linkedin or Gmail links below. </div> 
+          <div className="about-me-text"> I'm currently a senior at the University of Pennsylvania studying Computer Science with interests in robotics, machine learning and big data. My projects, experience and resume are all available on the site. Feel free to contact me using the Linkedin or Gmail links below. </div> 
         </div>
         <div className="resume-section">
           
